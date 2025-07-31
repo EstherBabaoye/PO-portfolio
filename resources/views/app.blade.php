@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PO Portfolio</title>
-    @viteReactRefresh
-    @vite('resources/js/main.jsx')
-  </head>
-  <body class="bg-white">
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PO Portfolio</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  @viteReactRefresh
+  @vite('resources/js/main.jsx')
+</head>
+
+<body class="bg-white">
+  <div id="root"></div>
+</body>
+
 </html>
