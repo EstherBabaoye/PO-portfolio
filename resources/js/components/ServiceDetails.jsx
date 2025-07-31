@@ -47,50 +47,58 @@ const ServiceDetails = () => {
 
   return (
     <>
-    <section className="bg-[#5840ba] text-white px-6 lg:px-20 py-20">
-      {/* Video/Thumb */}
-      <div className="mb-10">
-        <img
-          src={service.videoThumb}
-          alt="Service preview"
-          className="rounded-xl w-full max-w-4xl mx-auto"
-        />
-      </div>
-
-      {/* Main Description */}
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold mb-4">{service.title}</h2>
-        <p className="text-lg mb-6">{service.description}</p>
-
-        {/* Service Includes */}
-        <h3 className="text-2xl font-semibold mb-4">Services Include:</h3>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-disc pl-5 mb-10">
-          {service.includes.map((item, idx) => (
-            <li key={idx} className="text-green-300">{item}</li>
-          ))}
-        </ul>
-
-        {/* Extra Images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-          {service.extraImages.map((src, idx) => (
-            <img key={idx} src={src} alt="" className="rounded-xl" />
-          ))}
+      <section className="bg-[#5840ba] text-white px-4 sm:px-6 lg:px-20 py-16 sm:py-20">
+        {/* Video/Thumb */}
+        <div className="mb-10 flex justify-center">
+          <img
+            src={service.videoThumb}
+            alt="Service preview"
+            className="rounded-xl w-full max-w-4xl object-cover"
+          />
         </div>
 
-        {/* Benefits */}
-        <h3 className="text-2xl font-semibold mb-4">Service Benefits:</h3>
-        <ul className="space-y-4 list-disc pl-5">
-          {service.benefits.map((benefit, idx) => (
-            <li key={idx} className="text-green-300">{benefit}</li>
-          ))}
-        </ul>
-      </div>
-    </section>
+        {/* Main Description */}
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center sm:text-left">
+            {service.title}
+          </h2>
+          <p className="text-base sm:text-lg mb-8 text-center sm:text-left">
+            {service.description}
+          </p>
 
-    <LoopingTextBanner />
+          {/* Service Includes */}
+          <h3 className="text-2xl font-semibold mb-4">Services Include:</h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-disc pl-5 mb-10">
+            {service.includes.map((item, idx) => (
+              <li key={idx} className="text-green-300">{item}</li>
+            ))}
+          </ul>
+
+          {/* Extra Images */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            {service.extraImages.map((src, idx) => (
+              <img
+                key={idx}
+                src={src}
+                alt=""
+                className="rounded-xl w-full object-cover"
+              />
+            ))}
+          </div>
+
+          {/* Benefits */}
+          <h3 className="text-2xl font-semibold mb-4">Service Benefits:</h3>
+          <ul className="space-y-4 list-disc pl-5">
+            {service.benefits.map((benefit, idx) => (
+              <li key={idx} className="text-green-300">{benefit}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <LoopingTextBanner />
     </>
   );
-  
 };
 
 export default ServiceDetails;

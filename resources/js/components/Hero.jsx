@@ -7,9 +7,9 @@ import AnimatedTitle from "./AnimatedTitle";
 
 export default function Hero() {
     return (
-        <section className="relative mt-24 bg-white min-h-screen flex flex-col items-center justify-center px-6  overflow-hidden">
+        <section className="relative mt-24 bg-white min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-16 overflow-hidden">
             {/* Floating "Hire Me" Badge Image */}
-            <div className="absolute top-8 right-24 w-40 h-40">
+            <div className="absolute top-6 right-6 sm:top-8 sm:right-24 w-24 h-24 sm:w-40 sm:h-40">
                 <img
                     src={hireMeBadge}
                     alt="Hire Me Badge"
@@ -18,22 +18,23 @@ export default function Hero() {
             </div>
 
             {/* Intro Text */}
-            <p className="text-xl  font-medium ">
+            <p className="text-base sm:text-xl font-medium">
                 <span className="text-[#8172b9]">—</span> Hello
             </p>
-            <h1 className="text-6xl sm:text-7xl font-semibold text-gray-900 leading-tight text-center z-10">
+            <h1 className="text-4xl sm:text-6xl font-semibold text-gray-900 leading-tight text-center z-10">
                 I'm{" "}
                 <span className="text-[#5840ba] underline decoration-[#5840ba] decoration-[3px] underline-offset-4">
                     Praise,
-                </span>{" "}
+                </span>
                 <br />
                 <AnimatedTitle />
             </h1>
 
-            {/* Main Profile + Double Trapezium Blob */}
-            <div className="relative  w-[280px] sm:w-[320px] h-[500px] mx-auto z-10 -mt-6">
+            {/* Main Profile + SVG */}
+            <div className="relative w-[220px] sm:w-[280px] md:w-[320px] h-[400px] sm:h-[450px] md:h-[500px] mx-auto z-10 -mt-6">
+                {/* SVG blobs */}
                 <svg
-                    className="absolute bottom-0 right-3/4 translate-x-[50%] w-[360px] h-[340px] z-0"
+                    className="absolute bottom-0 right-1/2 translate-x-[50%] w-[260px] sm:w-[320px] h-[280px] sm:h-[340px] z-0"
                     viewBox="0 0 100 100"
                     preserveAspectRatio="none"
                 >
@@ -42,10 +43,8 @@ export default function Hero() {
                         fill="#5840ba"
                     />
                 </svg>
-
-                {/* Right Half Blob with smooth rounded corners */}
                 <svg
-                    className="absolute bottom-0 left-3/4 -translate-x-[50%] w-[280px] h-[245px] z-0"
+                    className="absolute bottom-0 left-1/2 -translate-x-[50%] w-[200px] sm:w-[280px] h-[180px] sm:h-[245px] z-0"
                     viewBox="0 0 100 100"
                     preserveAspectRatio="none"
                 >
@@ -59,71 +58,31 @@ export default function Hero() {
                 <img
                     src={profileImg}
                     alt="Praise Profile"
-                    className="w-full h-full object-cover relative z-10  filter grayscale hover:grayscale-0 transition"
+                    className="w-full h-full object-cover relative z-10 rounded-xl filter grayscale hover:grayscale-0 transition"
                 />
 
                 {/* Buttons */}
-                {/* <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-20"> */}
-                <div className="flex gap-2 items-center bg-white rounded-full px-1 py-1 shadow-md border border-gray-200">
-                    {/* Portfolio Button */}
-                    <a
-                        href="#"
-                        className="inline-flex items-center justify-center w-40 gap-2 rounded-full bg-[#5840ba] text-white px-3 py-2 text-lg font-semibold hover:bg-[#4835a0] transition"
-                    >
+                <div className="flex flex-col sm:flex-row gap-2 items-center mt-4 sm:mt-0 sm:absolute sm:bottom-5 sm:left-1/2 sm:transform sm:-translate-x-1/2 z-20 bg-white rounded-full px-2 py-2 shadow-md border border-gray-200">
+                    <a href="#" className="w-40 text-center ...">
                         Portfolio
-                        <span className="text-lg bg-[#a3db74] text-black rounded-full font-bold w-6 h-6 flex items-center justify-center">
-                            →
-                        </span>
                     </a>
-
-                    {/* Hire Me Button */}
-                    <Link
-                        to="/contact"
-                        className="inline-flex items-center justify-center gap-8 rounded-full w-40 font-bold border-2 border-black text-black px-3 py-2 text-lg hover:bg-gray-100 transition bg-white"
-                    >
+                    <Link to="/contact" className="w-40 text-center ...">
                         Hire Me
                     </Link>
                 </div>
-                {/* </div> */}
+
                 {/* Animated Buttons */}
-                <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-20">
+                <div className="absolute -bottom-10 sm:bottom-5 left-1/2 transform -translate-x-1/2 z-20">
                     <AnimatedButtons />
                 </div>
             </div>
 
             {/* Client Avatars */}
-            <div className="absolute bottom-36 left-28 flex flex-col items-start gap-2">
-                {/* Text on top */}
-                <div>
-                    <p className="text-sm font-bold text-gray-900">450+</p>
-                    <p className="text-xs text-gray-500">Happy Clients</p>
-                </div>
-
-                {/* Avatar Group */}
+            <div className="absolute bottom-32 left-4 sm:left-20 flex flex-col items-start gap-2">
+                <p className="text-sm font-bold text-gray-900">450+</p>
+                <p className="text-xs text-gray-500">Happy Clients</p>
                 <div className="flex items-center -space-x-3">
-                    <img
-                        className="w-10 h-10 rounded-full border-2 border-white"
-                        src="https://randomuser.me/api/portraits/women/1.jpg"
-                        alt=""
-                    />
-                    <img
-                        className="w-10 h-10 rounded-full border-2 border-white"
-                        src="https://randomuser.me/api/portraits/men/2.jpg"
-                        alt=""
-                    />
-                    <img
-                        className="w-10 h-10 rounded-full border-2 border-white"
-                        src="https://randomuser.me/api/portraits/women/3.jpg"
-                        alt=""
-                    />
-                    <img
-                        className="w-10 h-10 rounded-full border-2 border-white"
-                        src="https://randomuser.me/api/portraits/women/3.jpg"
-                        alt=""
-                    />
-                    <div className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 text-xs text-gray-600 flex items-center justify-center font-bold">
-                        +
-                    </div>
+                    {/* map avatars here if dynamic */}
                 </div>
             </div>
         </section>

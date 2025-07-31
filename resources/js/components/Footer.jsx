@@ -8,13 +8,13 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-700 px-6 md:px-20 pt-24 pb-10 border-t">
-     
-      {/* Footer Top Section - Logo & About Centered */}
-      <div className="flex flex-col items-center text-center mb-10">
-        <h2 className="text-3xl border-b border-gray-200 pb-10 mb-10 md:text-4xl font-bold">
+    <footer className="bg-white text-gray-700 px-4 sm:px-10 md:px-20 pt-20 pb-10 border-t">
+      {/* Top Section - Heading, Logo, About */}
+      <div className="flex flex-col items-center text-center mb-12 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold border-b border-gray-200 pb-6 mb-8">
           Let’s <span className="text-[#6B55D9]">MAKE MAGIC</span> together
         </h2>
+
         {/* Logo */}
         <div className="flex items-center gap-2 mb-4">
           <div className="w-6 h-6 bg-[#6B55D9] rotate-45"></div>
@@ -22,18 +22,18 @@ const Footer = () => {
           <span className="text-2xl font-bold">PO</span>
         </div>
 
-        {/* About Text */}
-        <p className="text-sm leading-relaxed max-w-md">
+        {/* About */}
+        <p className="text-sm leading-relaxed max-w-md text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
 
         {/* Social Links */}
-        <div className="flex gap-4 mt-6 text-white justify-center flex-wrap">
+        <div className="flex flex-wrap justify-center gap-4 mt-6 text-white">
           {/* Email */}
           <a
             href="mailto:stephenpraise4u@gmail.com"
-            className="bg-[#6B55D9] p-3 rounded-full"
+            className="bg-[#6B55D9] p-3 rounded-full hover:opacity-90"
           >
             <FaEnvelope />
           </a>
@@ -43,7 +43,7 @@ const Footer = () => {
             href="http://wa.me/2348151118860"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#6B55D9] p-3 rounded-full"
+            className="bg-[#6B55D9] p-3 rounded-full hover:opacity-90"
           >
             <FaWhatsapp />
           </a>
@@ -53,7 +53,7 @@ const Footer = () => {
             href="https://www.upwork.com/freelancers/~011ee4ee90eb20a406"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#6B55D9] p-3 rounded-full"
+            className="bg-[#6B55D9] p-3 rounded-full hover:opacity-90"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ const Footer = () => {
             href="https://x.com/i_am_polaris_?s=21"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#6B55D9] p-3 rounded-full"
+            className="bg-[#6B55D9] p-3 rounded-full hover:opacity-90"
           >
             <FaTwitter />
           </a>
@@ -80,25 +80,24 @@ const Footer = () => {
             href="https://www.linkedin.com/in/praise-olaseni-80417a18b"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#6B55D9] p-3 rounded-full"
+            className="bg-[#6B55D9] p-3 rounded-full hover:opacity-90"
           >
             <FaLinkedinIn />
           </a>
         </div>
       </div>
-      
 
       {/* Footer Bottom */}
-      <div className="text-center justify-between border-t border-gray-200 pt-6 text-sm">
+      <div className="border-t border-gray-200 pt-6 text-sm text-center">
         <p>
-          Copyright © 2025{" "}
-          <span className="text-[#6B55D9]">Praise Olaseni</span>. All Rights
-          Reserved.
+          © 2025{" "}
+          <span className="text-[#6B55D9] font-medium">Praise Olaseni</span>. All
+          Rights Reserved.
         </p>
       </div>
 
-      {/* Signature/Watermark */}
-      <div className="text-center text-xs text-gray-400 mt-6">
+      {/* Signature */}
+      <div className="text-center text-xs text-gray-400 mt-4">
         Website crafted by{" "}
         <a
           href="https://github.com/EstherBabaoye"
@@ -109,7 +108,6 @@ const Footer = () => {
           Labims
         </a>
       </div>
-      
     </footer>
   );
 };

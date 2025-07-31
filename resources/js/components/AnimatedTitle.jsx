@@ -9,14 +9,11 @@ export default function AnimatedTitle() {
 
   useEffect(() => {
     if (inView) {
-      // Reset both animations
       controls.set("hidden");
       glowControls.set({ scale: 1, textShadow: "0px 0px 0px rgba(0,0,0,0)" });
 
-      // Start typing animation
       controls.start("visible");
 
-      // Trigger glow after typing completes
       const glowDelay = 950;
       const timeout = setTimeout(() => {
         glowControls.start({
@@ -37,7 +34,7 @@ export default function AnimatedTitle() {
   return (
     <motion.div
       ref={ref}
-      className="inline-block text-black font-semibold"
+      className="w-full text-center sm:text-left px-4 sm:px-0"
       animate={glowControls}
     >
       <motion.span
@@ -51,6 +48,7 @@ export default function AnimatedTitle() {
             },
           },
         }}
+        className="inline-block text-black font-semibold text-2xl sm:text-3xl md:text-4xl"
       >
         {"Creative Writer".split("").map((letter, index) => (
           <motion.span

@@ -1,11 +1,11 @@
 export default function LoopingTextBanner() {
   return (
-    <section className="bg-[#a3db74] py-4 overflow-hidden whitespace-nowrap">
-      <div className="animate-marquee inline-block font-semibold text-2xl text-black">
+    <section className="bg-[#a3db74] py-4 overflow-hidden">
+      <div className="animate-marquee whitespace-nowrap font-semibold text-base sm:text-lg md:text-xl lg:text-2xl text-black">
         {Array(10)
           .fill(null)
           .map((_, i) => (
-            <span key={i} className="inline-flex items-center gap-4 px-8">
+            <span key={i} className="inline-flex items-center gap-4 px-6">
               <span>Script Writer</span>
               <StarIcon />
               <span>Ghost Writer</span>
@@ -27,7 +27,7 @@ function StarIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-5 h-5 inline-block text-black"
+      className="w-4 h-4 sm:w-5 sm:h-5 inline-block text-black"
       fill="currentColor"
       viewBox="0 0 20 20"
     >
