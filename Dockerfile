@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     libonig-dev \
     libxml2-dev \
+    libpq-dev \
     zip \
     unzip \
     curl \
@@ -14,8 +15,8 @@ RUN apt-get update && apt-get install -y \
     npm \
     nodejs
 
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+# ✅ Install PHP extensions including PostgreSQL
+RUN docker-php-ext-install pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd
 
 # Set working directory
 WORKDIR /var/www
@@ -26,7 +27,7 @@ COPY . /var/www
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Install Laravel dependencies
+# Install Laravel & build frontend
 RUN composer install --no-dev --optimize-autoloader
 RUN npm install && npm run build
 
