@@ -10,5 +10,5 @@ export default defineConfig({
     }),
     react(),
   ],
-  base: process.env.NODE_ENV === 'production' ? '/build/' : '/',
+  base: '/build/', // ✅ force correct asset prefix for production
 })
