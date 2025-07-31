@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Middleware\CorsMiddleware;
+use App\Http\Middleware\CorsMiddleware;
 
 // Apply CORS to a group of routes
 Route::middleware([CorsMiddleware::class])->group(function () {
